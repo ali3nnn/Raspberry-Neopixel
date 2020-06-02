@@ -1,0 +1,161 @@
+<html>
+
+<head>
+    <title>LED Control</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+        integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.bundle.min.js"
+        integrity="sha384-1CmrxMRARb6aLqgBO7yyAxTOQE2AKb9GfXnEo760AUcUmFx3ibVJJAzGytlQcNXd"
+        crossorigin="anonymous"></script>
+    <link href="./css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    .<div class="jumbotron jumbotron-fluid">
+        <div class="container">
+            <h1 class="display-3 center"> <i class="fa fa-lightbulb-o" aria-hidden="true"></i> LED Control Board</h1>
+            <!-- <p class="lead">Jumbo helper text</p> -->
+            <hr class="my-10">
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="card-wrapper pulse">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">Pulse</h5>
+                                    <!-- <div class="color-picker">
+                                        <div id="picker"></div>
+                                        <div id="slide"></div>
+                                    </div> -->
+                                    <form action="" method="POST">
+                                        <div class="form-group">
+                                            <label for="red">RED: <span id="value-red">1</span></label>
+                                            <input type="range" name="red" min="1" max="255" value="1" id="red">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="green">GREEN: <span id="value-green">1</span></label>
+                                            <input type="range" name="green" min="1" max="255" value="1" id="green">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="blue">BLUE: <span id="value-blue">1</span></label>
+                                            <input type="range" name="blue" min="1" max="255" value="1" id="blue">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="freq">Frec.: <span id="value-freq">1</span> Hz</label>
+                                            <input type="range" name="freq" min="0" max="100" value="1" id="freq">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="zone">Zona:</label>
+                                            <select name="zone" id="zone">
+                                                <option value="scari">Scari</option>
+                                                <option value="geamuri">Geamuri</option>
+                                                <option value="hol">Hol</option>
+                                            </select>
+                                        </div>
+                                        <button type="submit" class="btn btn-primary">UPDATE</button>
+                                        <button type="button" class="btn btn-primary check-pulse">CHECK</button>
+                                    </form>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="row">
+                        <div class="card-wrapper testingCard">
+                            <div class="card" style="width: 18rem;">
+                                <div class="card-body pulsate">
+                                    <h5 class="card-title">Testing Pulse</h5>
+                                    <div class="testing-box pulsate-active"></div>
+                                    <!-- <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6> -->
+                                    <!-- <p class="card-text">Some quick example text to build on the card title and make up
+                                        the
+                                        bulk
+                                        of the card's content.</p>
+                                    <a href="#" class="card-link">Card link</a>
+                                    <a href="#" class="card-link">Another link</a> -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container-fluid">
+
+        <!-- <div class="row">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+              </div>
+        </div> -->
+    </div>
+
+
+    <!-- <form action="/api/set-color" method="POST">
+        <label for="red">RED:</label>
+        <input type="range" name="red" min="1" max="255" value="50"><br><br>
+
+        <label for="green">GREEN:</label>
+        <input type="range" name="green" min="1" max="255" value="50"><br><br>
+
+        <label for="blue">BLUE:</label>
+        <input type="range" name="blue" min="1" max="255" value="50"><br><br>
+
+        <label for="pixel">Pixel Number: <span id="value-range1"></span></label>
+        <input type="range" name="pixel" min="0" max="150" value="50" id="range1"><br><br>
+
+        <button type="submit" name="button">Update Color</button>
+    </form> -->
+
+    <!-- <h1>Set color:</h1>
+    <a href='/api/set-color/'>RED</a>
+    <a href='/api/set-color/'>GREEN</a>
+    <a href='/api/set-color/'>BLUE</a> -->
+
+
+    <!-- <script>
+        var slider = document.getElementById("range1");
+        var output = document.getElementById("value-range1");
+        output.innerHTML = slider.value; // Display the default slider value
+
+        // Update the current slider value (each time you drag the slider handle)
+        slider.oninput = function () {
+            output.innerHTML = this.value;
+        }
+    </script> -->
+
+    <!-- <div id="picker"></div> -->
+    <!-- <div id="slide"></div> -->
+
+    <script type="text/javascript" src="./js/colorpicker.js"></script>
+    <script type="text/javascript" src="./js/script.js"></script>
+
+    <!-- <script type="text/javascript">
+        ColorPicker(
+            document.getElementById('slide'),
+            document.getElementById('picker'),
+            function (hex, hsv, rgb) {
+                document.querySelector('.randomCard .card-body').style.backgroundColor = hex;
+            });
+    </script> -->
+
+</body>
+
+</html>
